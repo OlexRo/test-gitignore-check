@@ -94,9 +94,8 @@ build/
 # =================================
 # Docker-specific files
 # =================================
-docker-compose*.yml
-Dockerfile
-.dockerignore
+.env
+.env.local
 
 # =================================
 # General/OS files - Общие/системные файлы

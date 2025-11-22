@@ -12,6 +12,7 @@
 *.html text eol=lf
 *.json text eol=lf
 *.md text eol=lf
+*.svg text
 
 # =================================
 # Backend файлы
@@ -21,11 +22,25 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 *.xml text eol=lf
-*.md text eol=lf
 
+# =================================
+# Конфигурационные файлы
+# =================================
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+*.config.js text eol=lf
+tsconfig.json text eol=lf
+package.json text eol=lf
+pom.xml text eol=lf
+
+# =================================
 # Исполняемые файлы - скрипты
-/mvnw text eol=lf
+# =================================
+mvnw text eol=lf
+*.sh text eol=lf
 *.cmd text eol=crlf
+gradlew text eol=lf
 
 # =================================
 # Бинарные файлы - не текстовые, Git не пытается их сравнивать
@@ -33,9 +48,29 @@
 *.jar binary
 *.war binary
 *.ear binary
+*.zip binary
 *.png binary
 *.jpg binary
 *.jpeg binary
 *.gif binary
 *.ico binary
 *.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# =================================
+# Package manager lock files (двоичные для производительности)
+# =================================
+package-lock.json binary
+yarn.lock binary
+pnpm-lock.yaml binary
+
+# =================================
+# Избегаем конфликтов для уже существующих файлов
+# =================================
+*.js -text
+*.jsx -text
+*.ts -text
+*.tsx -text
