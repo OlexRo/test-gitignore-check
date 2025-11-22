@@ -1,0 +1,106 @@
+# =================================
+# Frontend (Next.js) - работает для frontend/ и backend/
+# =================================
+
+# dependencies - папка с установленными библиотеками
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing - результаты запуска тестов
+coverage/
+
+# next.js - сборки и артефакты Next.js
+.next/
+out/
+
+# production - финальная сборка для производства
+build/
+
+# misc - системные файлы MacOS
+.DS_Store
+*.pem
+
+# debug - логи ошибок пакетных менеджеров
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel - файлы для деплоя на Vercel
+.vercel
+
+# typescript - кэш и служебные файлы TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# =================================
+# Backend (Java Spring Boot) - работает для frontend/ и backend/
+# =================================
+
+# Build outputs - скомпилированные артефакты
+target/
+*.jar
+*.war
+*.ear
+*.zip
+
+# Maven - файлы системы сборки
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDEs - служебные файлы сред разработки
+## STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+## IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+## NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+## VS Code
+.vscode/
+
+# =================================
+# Docker-specific files
+# =================================
+docker-compose*.yml
+Dockerfile
+.dockerignore
+
+# =================================
+# General/OS files - Общие/системные файлы
+# =================================
+.DS_Store
+Thumbs.db
+*.log
