@@ -38,10 +38,19 @@ services:
       - DB_NAME=${DB_NAME}
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
+      - WAIT_HOSTS=database:3306
+      - WAIT_TIMEOUT=60
+      - WAIT_SLEEP_INTERVAL=5
     networks:
       - app-network
     depends_on:
-      - database
+      database:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      timeout: 10s
+      retries: 5
+      start_period: 40s
   
   database:
     image: mysql:8.0
@@ -57,6 +66,11 @@ services:
     ports:
       - "3307:3306"
     command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p${DB_ROOT_PASSWORD}"]
+      timeout: 20s
+      retries: 10
+      start_period: 40s
 
 networks:
   app-network:
