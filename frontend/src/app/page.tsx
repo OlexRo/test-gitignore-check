@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TestApi from './TestApi'
+import TestApi from '@/components/TestApi'
 
 export default function Home() {
   return (
